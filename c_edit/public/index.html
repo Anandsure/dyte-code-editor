@@ -22,7 +22,57 @@
     -->
     <title>Dyte Web IDE</title>
     <style>
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            /* Black w/ opacity */
+        }
+        /* Modal Content */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            color: #000;
+        }
+        /* The Close Button */
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
         .sidenav {
+            z-index: 1;
             height: 100%;
             width: 0;
             position: fixed;
@@ -71,6 +121,21 @@
 </head>
 
 <body style="background-color: #222222; color: #f1f1f1;">
+    <div id="myModal" style="display: block;" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Web Based vanilla front-end IDE, Made by <a href="https://github.com/Anandsure" target="__blank">Anand</a></p>
+            <br>
+            <p>Instructions:</p>
+            <p>1. Select the file you want to work on from the side nav bar, the file will appear highlighted.</p>
+            <p>2. Start typing your code you're good to go !!</p>
+            <br>
+            <p>It's that Easy, enjoy :)</p>
+        </div>
+
+    </div>
 
     <div id="mySidenav" style="width: 200px;" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -85,7 +150,7 @@
         <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;  width: fit-content;"><img style="height: 18px;" src="js_sq.svg" /><a id="j" style="display: inline; font-size: 25px;" onclick="o_j()" href="#">index.js</a></div>
         <br>
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;<ul id="tit" style="display: inline; margin-left: 175px;"> Dyte - Front End Web IDE <p style="font-size: xx-small; display: inline;">(made with <a href="https://github.com/Anandsure" target="__blank">❤️</a>)</p></ul></span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;<ul id="tit" style="display: inline; margin-left: 175px;"> Dyte - Front End Web IDE <p style="font-size: x-small; display: inline;">(made with <a href="https://github.com/Anandsure" target="__blank"></a>❤️</a>)</p></ul></span>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -102,6 +167,17 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 <script>
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "200px";
         document.getElementById("res").style.left = "800px";
