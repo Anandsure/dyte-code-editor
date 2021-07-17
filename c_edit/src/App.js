@@ -112,6 +112,12 @@ class App extends Component {
             CodeMirror value = { html }
             options = {
                 {
+                    autoCloseTags: true,
+                    matchBrackets: true,
+                    autoCloseBrackets: true,
+                    extraKeys: {
+                        'Ctrl-Space': 'autocomplete'
+                    },
                     mode: "htmlmixed",
                     ...codeMirrorOptions
                 }
@@ -130,6 +136,12 @@ class App extends Component {
             CodeMirror value = { css }
             options = {
                 {
+                    autoCloseTags: true,
+                    matchBrackets: true,
+                    autoCloseBrackets: true,
+                    extraKeys: {
+                        'Ctrl-Space': 'autocomplete'
+                    },
                     mode: "css",
                     ...codeMirrorOptions
                 }
@@ -148,6 +160,12 @@ class App extends Component {
             CodeMirror value = { js }
             options = {
                 {
+                    autoCloseTags: true,
+                    matchBrackets: true,
+                    autoCloseBrackets: true,
+                    extraKeys: {
+                        'Ctrl-Space': 'autocomplete'
+                    },
                     mode: "javascript",
                     ...codeMirrorOptions
                 }

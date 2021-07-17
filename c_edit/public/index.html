@@ -36,9 +36,8 @@
         }
         
         .sidenav a {
-            padding: 8px 8px 8px 32px;
+            padding: 8px 8px 8px 2px;
             text-decoration: none;
-            font-size: 25px;
             color: #818181;
             display: block;
             transition: 0.3s;
@@ -71,9 +70,9 @@
 
     <div id="mySidenav" style="width: 200px;" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a onclick="o_h()" href="#">index.html</a>
-        <a onclick="o_c()" href="#">index.css</a>
-        <a onclick="o_j()" href="#">index.js</a>
+        <div style="margin-left: 30px; margin-top: 10px; margin-bottom: 10px;"><img style="height: 20px;" src="html.png" /><a style="display: inline;" onclick="o_h()" href="#">index.html</a></div>
+        <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;"><img style="height: 23px;" src="css.png" /><a style="display: inline;" onclick="o_c()" href="#">index.css</a></div>
+        <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;"><img style="height: 18px;" src="js_sq.svg" /><a style="display: inline;" onclick="o_j()" href="#">index.js</a></div>
     </div>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; File Selector</span>
     <div id="root"></div>
@@ -104,7 +103,6 @@
         document.getElementById("html_ed").classList.remove("hide");
         document.getElementById("js_ed").classList.add("hide");
         document.getElementById("css_ed").classList.add("hide");
-        closeNav()
 
     }
 
@@ -112,7 +110,6 @@
         document.getElementById("html_ed").classList.add("hide");
         document.getElementById("js_ed").classList.remove("hide");
         document.getElementById("css_ed").classList.add("hide");
-        closeNav()
 
     }
 
@@ -120,7 +117,6 @@
         document.getElementById("html_ed").classList.add("hide");
         document.getElementById("js_ed").classList.add("hide");
         document.getElementById("css_ed").classList.remove("hide");
-        closeNav()
 
     }
 </script>
