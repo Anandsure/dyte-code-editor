@@ -55,6 +55,10 @@
             margin-left: 50px;
         }
         
+        a:active {
+            background-color: rgba(54, 91, 192, 0.171);
+        }
+        
         @media screen and (max-height: 450px) {
             .sidenav {
                 padding-top: 15px;
@@ -70,11 +74,18 @@
 
     <div id="mySidenav" style="width: 200px;" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div style="margin-left: 30px; margin-top: 10px; margin-bottom: 10px;"><img style="height: 20px;" src="html.png" /><a style="display: inline;" onclick="o_h()" href="#">index.html</a></div>
-        <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;"><img style="height: 23px;" src="css.png" /><a style="display: inline;" onclick="o_c()" href="#">index.css</a></div>
-        <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;"><img style="height: 18px;" src="js_sq.svg" /><a style="display: inline;" onclick="o_j()" href="#">index.js</a></div>
+        <br>
+        <br>
+        <br>
+
+        <div style="margin-left: 30px; margin-top: 10px; margin-bottom: 10px; width: fit-content;"><img style="height: 20px;" src="html.png" /><a id="htm" style="display: inline; font-size: 25px;" onclick="o_h()" href="#">index.html</a></div>
+        <br>
+        <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;  width: fit-content;"><img style="height: 23px;" src="css.png" /><a id="cs" style="display: inline; font-size: 25px;" onclick="o_c()" href="#">index.css</a></div>
+        <br>
+        <div style="margin-left: 30px;margin-top: 10px; margin-bottom: 10px;  width: fit-content;"><img style="height: 18px;" src="js_sq.svg" /><a id="j" style="display: inline; font-size: 25px;" onclick="o_j()" href="#">index.js</a></div>
+        <br>
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; File Selector</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;<ul id="tit" style="display: inline; margin-left: 175px;"> Dyte - Front End Web IDE <p style="font-size: xx-small; display: inline;">(made with <a href="https://github.com/Anandsure" target="__blank">❤️</a>)</p></ul></span>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -93,16 +104,25 @@
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("res").style.left = "800px";
+        document.getElementById("ed").style.left = "200px";
+        document.getElementById("tit").style.marginLeft = "175px";
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("res").style.left = "600px";
+        document.getElementById("ed").style.left = "0px";
+        document.getElementById("tit").style.marginLeft = "0px";
     }
 
     function o_h() {
         document.getElementById("html_ed").classList.remove("hide");
         document.getElementById("js_ed").classList.add("hide");
         document.getElementById("css_ed").classList.add("hide");
+        document.getElementById("htm").style.backgroundColor = "rgba(54, 91, 192, 0.171)";
+        document.getElementById("cs").style.backgroundColor = "";
+        document.getElementById("j").style.backgroundColor = "";
 
     }
 
@@ -110,6 +130,9 @@
         document.getElementById("html_ed").classList.add("hide");
         document.getElementById("js_ed").classList.remove("hide");
         document.getElementById("css_ed").classList.add("hide");
+        document.getElementById("j").style.backgroundColor = "rgba(54, 91, 192, 0.171)";
+        document.getElementById("cs").style.backgroundColor = "";
+        document.getElementById("htm").style.backgroundColor = "";
 
     }
 
@@ -117,6 +140,9 @@
         document.getElementById("html_ed").classList.add("hide");
         document.getElementById("js_ed").classList.add("hide");
         document.getElementById("css_ed").classList.remove("hide");
+        document.getElementById("cs").style.backgroundColor = "rgba(54, 91, 192, 0.171)";
+        document.getElementById("htm").style.backgroundColor = "";
+        document.getElementById("j").style.backgroundColor = "";
 
     }
 </script>

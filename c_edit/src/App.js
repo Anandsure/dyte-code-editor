@@ -103,7 +103,8 @@ class App extends Component {
         return ( <
             div className = "App" >
             <
-            section className = "playground" >
+            section id = "ed"
+            className = "playground" >
             <
             div id = "html_ed"
             className = "code-editor html-code" >
@@ -178,8 +179,10 @@ class App extends Component {
             /> <
             /div> <
             /section> <
-            section className = "result" >
+            section id = "res"
+            className = "result" >
             <
+            p class = "abcd" > Live Preview: < /p> <
             iframe title = "result"
             className = "iframe"
             ref = "iframe" / >
